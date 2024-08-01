@@ -1,0 +1,4 @@
+url: https://fwimp.github.io/roz/
+template:
+  bootstrap: 5
+  light-switch: true

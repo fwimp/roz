@@ -1,13 +1,24 @@
 Package: roz
-Title: Interface with Onezoom using R
-Version: 0.0.0.9000
+Title: Onezoom R Interface
+Version: 0.0.1
 Authors@R: 
     person("Francis", "Windram", , "francis.windram17@imperial.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2129-826X"))
-Description: What the package does (one paragraph).
+Description: Interface with the public API of the Onezoom project using R.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-URL: https://github.com/fwimp/roz
+URL: https://github.com/fwimp/roz, https://fwimp.github.io/roz/
 BugReports: https://github.com/fwimp/roz/issues
+Imports: 
+    cli,
+    data.table,
+    dplyr,
+    httr2,
+    magrittr,
+    rlang
+Depends: 
+    R (>= 4.0)
+Suggests: 
+    parsermd

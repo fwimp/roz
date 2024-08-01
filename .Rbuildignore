@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
+^\.github$
+.lintr
+oz_sandbox.Rmd
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

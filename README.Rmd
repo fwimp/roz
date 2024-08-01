@@ -13,9 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-# roz
+# roz <img src="man/figures/logo.png" align="right" height="137" alt="" />
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/fwimp/roz/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fwimp/roz/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 roz allows for R access to a variety of services provided by the [onezoom](https://www.onezoom.org) project.
@@ -26,5 +27,34 @@ You can install the development version of roz like so:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("fwimp/ohvbd", build_vignettes = TRUE)
+devtools::install_github("fwimp/roz", build_vignettes = TRUE)
 ```
+
+## Latest patch notes
+
+```{r echo=FALSE}
+# Note this only handles up to h2 level right now. Will need some fiddling if more is needed further down the line!
+# In that case might be worth detecting and generating arbitrary levels of nesting with some clever recursive programming.
+
+news <- parsermd::as_tibble(parsermd::parse_rmd(system.file("NEWS.md", package = "roz")))
+md_chunks <- subset(news, type=="rmd_markdown")
+latest_version <- md_chunks[[1,1]]
+filtered_md_chunks <- subset(md_chunks, md_chunks$sec_h1 == latest_version)
+
+notes <- c()
+notes <- tryCatch({
+  for (i in 1:nrow(filtered_md_chunks)) {
+  # cat(paste0("## ", filtered_md_chunks[i, "sec_h2"], "\n\n", parsermd::as_document(md_chunks[[i,"ast"]], collapse = "\n")))
+  notes <- c(notes, paste0("#### ", filtered_md_chunks[i, "sec_h2"], "\n\n", parsermd::as_document(md_chunks[[i,"ast"]], collapse = "\n")))
+  }
+  paste(notes, collapse = "\n")
+}, error = function(e) {
+  parsermd::as_document(md_chunks[[1,"ast"]], collapse = "\n")
+})
+# notes <- parsermd::as_document(md_chunks[[1,"ast"]], collapse = "\n")
+
+```
+<!-- These are auto-pulled from NEWS.md  -->
+### `r latest_version`
+
+`r notes`

@@ -5,3 +5,5 @@
 .DS_Store
 .quarto
 oz_sandbox.Rmd
+docs
+.Rprofile
