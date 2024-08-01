@@ -8,7 +8,7 @@
 [![R-CMD-check](https://github.com/fwimp/roz/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fwimp/roz/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-roz allows for R access to a variety of services provided by the
+`roz` allows for R access to a variety of services provided by the
 [onezoom](https://www.onezoom.org) project.
 
 ## Installation
@@ -24,7 +24,9 @@ devtools::install_github("fwimp/roz", build_vignettes = TRUE)
 
 <!-- These are auto-pulled from NEWS.md  -->
 
-### roz 0.0.1
+### roz 0.0.2
 
-- Add `popularity()` to allow for onezoom popularity score retrieval.
-- Add converters for ott ids to other ids/names: `ott2*()`.
+- Add `node_images()` to allow for retrieval of public domain and cc
+  images.
+- Add experimental `identifier2ott()` function to allow for mapping
+  between other ids and ott.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/oz_basereq.R
 \name{set_oz_compat}
 \alias{set_oz_compat}
-\title{Set ohvbd compatability mode to TRUE}
+\title{Set roz compatability mode to TRUE}
 \usage{
 set_oz_compat(value = TRUE)
 }
@@ -10,7 +10,7 @@ set_oz_compat(value = TRUE)
 \item{value}{The boolean value to set oz_compat to.}
 }
 \description{
-Set ohvbd to disable ssl verification for calls to external APIs.
+Set roz to disable ssl verification for calls to external APIs.
 This should not be needed (and not be performed) unless you are running on a linux machine or are otherwise experiencing SSL issues when using the package!
 }
 \examples{

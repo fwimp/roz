@@ -14,6 +14,7 @@ Interface with the public API of the Onezoom project using R.
 Useful links:
 \itemize{
   \item \url{https://github.com/fwimp/roz}
+  \item \url{https://fwimp.github.io/roz/}
   \item Report bugs at \url{https://github.com/fwimp/roz/issues}
 }
 

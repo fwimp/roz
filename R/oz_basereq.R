@@ -35,8 +35,8 @@ oz_basereq <- function(baseurl = "https://www.onezoom.org/", useragent = "ROZ", 
 }
 
 
-#' @title Set ohvbd compatability mode to TRUE
-#' @description Set ohvbd to disable ssl verification for calls to external APIs.
+#' @title Set roz compatability mode to TRUE
+#' @description Set roz to disable ssl verification for calls to external APIs.
 #' This should not be needed (and not be performed) unless you are running on a linux machine or are otherwise experiencing SSL issues when using the package!
 #'
 #' @param value The boolean value to set oz_compat to.
