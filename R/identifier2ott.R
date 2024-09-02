@@ -23,7 +23,7 @@
 #'
 
 identifier2ott <- function(eol = NA, gbif = NA, ncbi = NA, iucn = NA, rate = 5, basereq = NA) {
-  cli_alert_warning("This function is currently experimental and returns the parsed JSON output essentially raw.")
+  cli_alert_warning("identifier2ott is currently experimental and returns the parsed JSON output essentially raw.")
 
   if (all(is.na(basereq))) {
     basereq <- oz_basereq()

@@ -70,7 +70,7 @@ node_images <- function(otts, type = "any", rate = 5, key = NA, basereq = NA) {
   out_df <- suppressWarnings(rbindlist(out$images, fill = TRUE, use.names = FALSE))
   colnames(out_df) <- imgnames
   # rebind image otts
-  ott <- data.frame(ott = names(out$images))
+  ott <- data.frame(ott = as.numeric(names(out$images)))
   out_df <- bind_cols(ott, out_df)
 
   return(out_df)

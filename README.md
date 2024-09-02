@@ -1,4 +1,5 @@
 
+<!-- force push by editing this number: 47 -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # roz <img src="man/figures/logo.png" align="right" height="137" alt="" />
@@ -24,9 +25,12 @@ devtools::install_github("fwimp/roz", build_vignettes = TRUE)
 
 <!-- These are auto-pulled from NEWS.md  -->
 
-### roz 0.0.2
+### roz 0.0.3
 
-- Add `node_images()` to allow for retrieval of public domain and cc
-  images.
-- Add experimental `identifier2ott()` function to allow for mapping
-  between other ids and ott.
+- Add `tools/exercise_roz_api.R` for testing the interface between `roz`
+  and the OZ API.
+- Remove return value from `oz_basereq()`.
+- Force ott ids to be returned by `node_images()` as integers.
+- Mitigate issue with header values from the OneZoom popularity
+  endpoint. See [Issue
+  \#875](https://github.com/OneZoom/OZtree/issues/875) for details.

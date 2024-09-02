@@ -59,5 +59,5 @@ set_oz_compat <- function(value = TRUE) {
 
   options(oz_compat = value)
   cli_alert_success("Set compatibility mode = {.val {getOption('oz_compat')}}")
-  return(NULL)
+  invisible()
 }

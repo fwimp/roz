@@ -85,7 +85,17 @@ popularity <- function(
   }
 
   suppressWarnings(out_df <- rbindlist(out$data))
-  colnames(out_df) <- names(out$header)
+  if (!include_raw) {
+    colnames(out_df) <- names(out$header)
+  } else {
+    # Sometimes this will return appropriately if expand_taxa == TRUE
+    if (length(names(out$header)) < 4) {
+      cli_alert_warning("Patching headers (see OneZoom issue #875)")
+      colnames(out_df) <- c(names(out$header), "raw_popularity")
+    } else {
+      colnames(out_df) <- names(out$header)
+    }
+  }
   attr(out_df, "tot_spp") <- out$tot_spp
   attr(out_df, "n_taxa") <- out$n_taxa
   return(out_df)
