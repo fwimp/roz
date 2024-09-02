@@ -71,7 +71,7 @@ popularity <- function(
     "key" = key,
     "expand_taxa" = as.numeric(expand),
     "spread_taxa_evenly" = as.numeric(spread_evenly),
-    "taxon_names" = as.numeric(taxon_names),
+    "names" = as.numeric(taxon_names),
     "include_raw" = as.numeric(include_raw),
     .multi = "comma"
   ) %>%
@@ -88,10 +88,17 @@ popularity <- function(
   if (!include_raw) {
     colnames(out_df) <- names(out$header)
   } else {
-    # Sometimes this will return appropriately if expand_taxa == TRUE
-    if (length(names(out$header)) < 4) {
+    # Remove when #875 is fixed.
+    if (!("raw_popularity" %in% names(out$header))) {
       cli_alert_warning("Patching headers (see OneZoom issue #875)")
-      colnames(out_df) <- c(names(out$header), "raw_popularity")
+      if (length(names(out$header)) == 3) {
+        # Just add at end
+        colnames(out_df) <- c(names(out$header), "raw_popularity")
+      } else {
+        # Insert raw_popularity at index 4
+        names_vec <- c(names(out$header)[1:3], "raw_popularity", names(out$header)[4:length(names(out$header))])
+        colnames(out_df) <- names_vec
+      }
     } else {
       colnames(out_df) <- names(out$header)
     }
