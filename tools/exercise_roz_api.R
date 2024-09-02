@@ -523,8 +523,6 @@ if (popularity_fail) {
   cli_alert_success("{col_green('popularity SUCCESS')}")
 }
 
-Sys.sleep(3)
-
 cli_h1("Results")
 
 fail_flags <- c(identifier2ott_fail, node_images_fail, ott2common_fail, ott2identifiers_fail, popularity_fail)
@@ -536,7 +534,5 @@ failstr <- col_red("{fails} FAIL{?S}")
 successstr <- col_green("{successes} SUCCESS{?ES}")
 cli_text(failstr)
 cli_text(successstr)
-
-
-cli_progress_message("Done!")
 cli_progress_done()
+cli_h1("Testing complete!")
