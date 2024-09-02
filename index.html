@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="index.html">roz</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,11 +82,13 @@
 </h2>
 <!-- These are auto-pulled from NEWS.md  -->
 <div class="section level3">
-<h3 id="roz-002">roz 0.0.2<a class="anchor" aria-label="anchor" href="#roz-002"></a>
+<h3 id="roz-003">roz 0.0.3<a class="anchor" aria-label="anchor" href="#roz-003"></a>
 </h3>
 <ul>
-<li>Add <code><a href="reference/node_images.html">node_images()</a></code> to allow for retrieval of public domain and cc images.</li>
-<li>Add experimental <code><a href="reference/identifier2ott.html">identifier2ott()</a></code> function to allow for mapping between other ids and ott.</li>
+<li>Add <code>tools/exercise_roz_api.R</code> for testing the interface between <code>roz</code> and the OZ API.</li>
+<li>Remove return value from <code><a href="reference/oz_basereq.html">oz_basereq()</a></code>.</li>
+<li>Force ott ids to be returned by <code><a href="reference/node_images.html">node_images()</a></code> as integers.</li>
+<li>Mitigate issue with header values from the OneZoom popularity endpoint. See <a href="https://github.com/OneZoom/OZtree/issues/875" class="external-link">Issue #875</a> for details.</li>
 </ul>
 </div>
 </div>
